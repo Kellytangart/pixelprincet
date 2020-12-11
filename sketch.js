@@ -27,7 +27,7 @@ textSize(14);
   if (stage == 1) {
     background('pink');
     text("Do you want to save the princet?", 270, 150);
-    fairy.position(20, 150, 'relative');
+    fairy.position(20, 150, 'fixed');
     image(player1flip, 570, 300);
       flower.position(620, 600, 'fixed');
     text("yes", 200, 350);
