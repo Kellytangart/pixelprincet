@@ -19,7 +19,7 @@ function preload() {
 function setup() {
   createCanvas(800, 500);
   stage = 1;
-   imageMode(CENTER);
+
 }
 
 function draw() {
@@ -130,7 +130,7 @@ function mousePressed() {
     if (mouseX > 150 && mouseX < 250 && mouseY > 330 && mouseY < 400) {
       stage = 21;
       dead.position(200, 400, 'relative');
-      
+
       fairy.hide();
     } else if (mouseX > 400 && mouseX < 550 && mouseY > 340 && mouseY < 360) {
       stage = 3;
@@ -144,7 +144,7 @@ function mousePressed() {
       stage = 22;
       fairy.hide();
       dead.position(200, 400, 'relative');
-      
+
     }
   }
   // Stage 4 BUTTONS
@@ -153,7 +153,7 @@ function mousePressed() {
       stage = 23;
       fairy.hide();
       dead.position(200, 400, 'relative');
-      
+
     } else if (mouseX > 400 && mouseX < 550 && mouseY > 340 && mouseY < 370) {
       stage = 5;
     }
@@ -166,7 +166,7 @@ function mousePressed() {
       stage = 24;
       fairy.hide();
       dead.position(200, 400, 'relative');
-      
+
 
     }
   }
@@ -174,12 +174,12 @@ function mousePressed() {
   else if (stage == 6) {
     if (mouseX, mouseY) {
       stage = 7;
-      
+
       fairy.hide();
     } else if (mouseX > 400 && mouseX < 550 && mouseY > 340 && mouseY < 370) {
       stage = 22;
       dead.position(200, 400, 'relative');
-      
+
       fairy.hide();
     }
   }
@@ -187,7 +187,7 @@ function mousePressed() {
   else if (stage == 7) {
     if (mouseX, mouseY) {
       stage = 8;
-      
+
       fairy.hide();
     }
   }
@@ -195,14 +195,14 @@ function mousePressed() {
   else if (stage == 8) {
     if (mouseX, mouseY) {
       stage = 9;
-      
+
     }
   }
   // Stage 9 BUTTONS
   else if (stage == 9) {
     if (mouseX, mouseY) {
       stage = 10;
-      
+
       fairyeye.hide();
     }
   }
@@ -210,13 +210,13 @@ function mousePressed() {
   else if (stage == 10) {
     if (mouseX, mouseY) {
       stage = 11;
-      
+
       fairyeye.hide();
     }
   } else if (stage == 11) {
     if (mouseX, mouseY) {
       stage = 12;
-      
+
       player1.hide();
       princeteye.hide();
       fairyeye.hide();
