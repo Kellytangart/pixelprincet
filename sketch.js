@@ -1,4 +1,4 @@
-var princet, princeteye, player1, playereye, flower, player1flip, fairy, fairyeye, light, dead;
+var princet, princeteye, player1, playereye, flower, player1flip, tree, tree2, fairy, fairyeye, light, dead;
 var stage = 1;
 
 function preload() {
@@ -11,8 +11,10 @@ function preload() {
   player1flip = loadImage('assets/Prince1flip.png');
 
   dead = createImg("assets/dead.png");
-  flower= createImg("assets/flower.gif");
+  flower = createImg("assets/flower.gif");
   light = loadImage('assets/light.png');
+  tree = loadImage("assets/tree.png");
+  tree2 = loadImage("assets/tree2.png");
 }
 
 function setup() {
@@ -23,13 +25,13 @@ function setup() {
 function draw() {
   textStyle(BOLD);
   strokeWeight(5);
-textSize(14);
+  textSize(14);
   if (stage == 1) {
     background('pink');
     text("Do you want to save the princet?", 270, 150);
-    fairy.position(20, 150, 'fixed');
+    fairy.position(20, 170, 'relative');
     image(player1flip, 570, 300);
-      flower.position(620, 600, 'fixed');
+    flower.position(620, 600, 'fixed');
     text("yes", 200, 350);
     text("no", 460, 350);
   } else if (stage == 2) {
@@ -47,7 +49,9 @@ textSize(14);
   } else if (stage == 4) {
     background('#a2f2a8');
     text('The man takes you to the dark forest', 270, 150);
-    image(player1flip, 570, 300);
+    image(player1flip, 330, 300);
+    image(tree, 80, 250);
+    image(tree2, 500, 240);
     text('take the rocky path?', 200, 350);
     text('take the thorny path?', 460, 350);
   } else if (stage == 5) {
@@ -63,28 +67,28 @@ textSize(14);
   } else if (stage == 7) {
     background('#e0acfa');
     text('princet I have come to save you', 260, 350);
-      princet.position(970,480, 'fixed');
+    princet.position(970, 480, 'fixed');
     player1.position(320, 480, 'relative');
   } else if (stage == 8) {
     background('#abfca4');
     text('Who told you to save me? *confused look*', 260, 350);
-      princeteye.position(970,480, 'fixed');
-      player1.position(420, 480, 'relative');
+    princeteye.position(970, 480, 'fixed');
+    player1.position(420, 480, 'relative');
   } else if (stage == 9) {
     background('gray');
     text('the fairy told me you needed help *sparkly eyes*', 220, 350);
-      fairyeye.position(440,230, 'fixed');
+    fairyeye.position(440, 230, 'fixed');
   } else if (stage == 10) {
     background('#fafaaa');
     text('*wtf face* “........no?', 260, 350);
-    princeteye.position(970,480, 'fixed');
+    princeteye.position(970, 480, 'fixed');
     player1.position(420, 480, 'relative');
   } else if (stage == 11) {
     background('#ffd7cf');
     text('Princet walks away from screen', 350, 150);
   } else if (stage == 12) {
     background('#ffd6d4');
-    text('The End', 350,150);
+    text('The End', 350, 150);
   }
 
   //Dead endstages
@@ -125,7 +129,7 @@ function mousePressed() {
   else if (stage == 2) {
     if (mouseX > 150 && mouseX < 250 && mouseY > 330 && mouseY < 400) {
       stage = 21;
-      dead.position(200,400, 'relative');
+      dead.position(200, 400, 'relative');
       player1flip.hide();
       fairy.hide();
     } else if (mouseX > 400 && mouseX < 550 && mouseY > 340 && mouseY < 360) {
@@ -139,7 +143,7 @@ function mousePressed() {
     } else if (mouseX > 400 && mouseX < 550 && mouseY > 340 && mouseY < 370) {
       stage = 22;
       fairy.hide();
-      dead.position(200,400, 'relative');
+      dead.position(200, 400, 'relative');
       player1flip.hide();
     }
   }
@@ -147,9 +151,9 @@ function mousePressed() {
   else if (stage == 4) {
     if (mouseX > 150 && mouseX < 250 && mouseY > 330 && mouseY < 400) {
       stage = 23;
-fairy.hide();
-dead.position(200,400, 'relative');
-player1flip.hide();
+      fairy.hide();
+      dead.position(200, 400, 'relative');
+      player1flip.hide();
     } else if (mouseX > 400 && mouseX < 550 && mouseY > 340 && mouseY < 370) {
       stage = 5;
     }
@@ -161,7 +165,7 @@ player1flip.hide();
     } else if (mouseX > 400 && mouseX < 550 && mouseY > 340 && mouseY < 370) {
       stage = 24;
       fairy.hide();
-      dead.position(200,400, 'relative');
+      dead.position(200, 400, 'relative');
       player1flip.hide();
 
     }
@@ -174,7 +178,7 @@ player1flip.hide();
       fairy.hide();
     } else if (mouseX > 400 && mouseX < 550 && mouseY > 340 && mouseY < 370) {
       stage = 22;
-      dead.position(200,400, 'relative');
+      dead.position(200, 400, 'relative');
       player1flip.hide();
       fairy.hide();
     }
@@ -184,7 +188,7 @@ player1flip.hide();
     if (mouseX, mouseY) {
       stage = 8;
       player1flip.hide();
-        fairy.hide();
+      fairy.hide();
     }
   }
   // Stage 8 BUTTONS
@@ -199,7 +203,7 @@ player1flip.hide();
     if (mouseX, mouseY) {
       stage = 10;
       player1flip.hide();
-        fairyeye.hide();
+      fairyeye.hide();
     }
   }
   // Stage 10 BUTTONS
@@ -207,16 +211,15 @@ player1flip.hide();
     if (mouseX, mouseY) {
       stage = 11;
       player1flip.hide();
-        fairyeye.hide();
+      fairyeye.hide();
     }
-  }
-  else if (stage == 11) {
+  } else if (stage == 11) {
     if (mouseX, mouseY) {
       stage = 12;
       player1flip.hide();
       player1.hide();
-        princeteye.hide();
-        fairyeye.hide();
+      princeteye.hide();
+      fairyeye.hide();
     }
   }
 }

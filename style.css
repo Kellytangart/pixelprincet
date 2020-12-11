@@ -13,3 +13,15 @@ canvas {
   width: 800px;
     border: 5px dotted white;
 }
+.footer {
+  font-size: 44px;
+  font-weight: bold;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #ffcbb3;
+   color: white;
+   text-align: center;
+       border: 5px dotted white;
+ }
