@@ -1,4 +1,4 @@
-var princet, princeteye, player1, playereye, flower, player1flip, fairy, fairyeye, dead;
+var princet, princeteye, player1, playereye, flower, player1flip, fairy, fairyeye, light, dead;
 var stage = 1;
 
 function preload() {
@@ -8,9 +8,11 @@ function preload() {
   playereye = createImg("assets/princeeyegif.gif");
   fairy = createImg("assets/Fairy.gif");
   fairyeye = createImg("assets/Fairyeyegif.gif");
-  player1flip = createImg("assets/Prince1flip.png");
+  player1flip = loadImage('assets/Prince1flip.png');
+
   dead = createImg("assets/dead.png");
   flower= createImg("assets/flower.gif");
+  light = loadImage('assets/light.png');
 }
 
 function setup() {
@@ -26,33 +28,38 @@ textSize(14);
     background('pink');
     text("Do you want to save the princet?", 270, 150);
     fairy.position(20, 150, 'relative');
-    player1flip.position(970, 480, 'fixed');
+    image(player1flip, 570, 300);
       flower.position(620, 600, 'fixed');
     text("yes", 200, 350);
     text("no", 460, 350);
   } else if (stage == 2) {
     background('#7ea4e0');
     text('Choose what road to take', 270, 150);
+    image(player1flip, 570, 300);
     text('Yellow Road', 150, 350);
     text('Red Road', 460, 350);
   } else if (stage == 3) {
     background('#99f3f7');
     text('You meet a man in a black robe', 280, 150);
+    image(player1flip, 570, 300);
     text('Help him', 200, 350);
     text('Leave him', 460, 350);
   } else if (stage == 4) {
     background('#a2f2a8');
     text('The man takes you to the dark forest', 270, 150);
+    image(player1flip, 570, 300);
     text('take the rocky path?', 200, 350);
     text('take the thorny path?', 460, 350);
   } else if (stage == 5) {
     background('#fbffa6');
     text('the thorns are in the way', 270, 150);
+    image(player1flip, 570, 300);
     text('throw the potion', 200, 350);
     text('keep and walk', 460, 350);
   } else if (stage == 6) {
     background('#fad7ac');
-    text('The thorns cleared and you found the princess!', 250, 150);
+    text('The thorns are gone and you found the princess!', 250, 150);
+    image(player1flip, 570, 300);
   } else if (stage == 7) {
     background('#e0acfa');
     text('princet I have come to save you', 260, 350);
@@ -65,7 +72,7 @@ textSize(14);
       player1.position(420, 480, 'relative');
   } else if (stage == 9) {
     background('gray');
-    text('the fairy told me you needed help *sparkly eyes*', 260, 350);
+    text('the fairy told me you needed help *sparkly eyes*', 220, 350);
       fairyeye.position(440,230, 'fixed');
   } else if (stage == 10) {
     background('#fafaaa');
@@ -75,8 +82,6 @@ textSize(14);
   } else if (stage == 11) {
     background('#ffd7cf');
     text('Princet walks away from screen', 350, 150);
-    princeteye.position(970,480, 'fixed');
-    player1.position(420, 480, 'relative');
   } else if (stage == 12) {
     background('#ffd6d4');
     text('The End', 350,150);
@@ -93,6 +98,7 @@ textSize(14);
   } else if (stage == 22) {
     background('red');
     text('you got cursed and get strucked by lighting *dead*', 250, 150);
+    image(light, 260, 150);
   } else if (stage == 23) {
     background('red');
     text('You slip and fall off the cliff *dead*', 260, 150);
