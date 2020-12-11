@@ -28,7 +28,7 @@ function draw() {
   if (stage == 1) {
     background('pink');
     text("Do you want to save the princet?", 270, 150);
-    fairy.position(20, 170, 'relative');
+    fairy.position(20, 200, 'relative');
     image(player1flip, 570, 300);
     flower.position(620, 600, 'fixed');
     text("yes", 200, 350);
