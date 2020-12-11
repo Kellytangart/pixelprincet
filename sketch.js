@@ -9,7 +9,6 @@ function preload() {
   fairy = createImg("assets/Fairy.gif");
   fairyeye = createImg("assets/Fairyeyegif.gif");
   player1flip = loadImage('assets/Prince1flip.png');
-
   dead = createImg("assets/dead.png");
   flower = createImg("assets/flower.gif");
   light = loadImage('assets/light.png');
