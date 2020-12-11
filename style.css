@@ -1,13 +1,13 @@
 html, body {
-  margin: 10;
-  padding: 10;
+  margin: 100;
+  padding: 100;
   background-color: coral;
 }
 
 canvas {
   display: block;
-  padding-left: 100;
-  padding-right: 100;
+  padding-left: 0;
+  padding-right: 0;
   margin-left: auto;
   margin-right: auto;
   display: block;
